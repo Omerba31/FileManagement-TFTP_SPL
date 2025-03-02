@@ -21,7 +21,6 @@ FileManagement-TFTP/
 │   ├── resources/              # Configuration files
 ├── README.md                   # Project documentation
 ├── .gitignore                   # Ignore unnecessary files
-├── running.txt                  # Instructions on how to run the project
 └── pom.xml                      # Maven build file
 ```
 
@@ -42,14 +41,20 @@ FileManagement-TFTP/
    ```
 
 ## Running the Application
-### Start the Server:
+### Start the TFTP Server
 ```sh
-java -jar server/target/server.jar
+cd server
+mvn compile exec:java -Dexec.mainClass="bgu.spl.net.impl.tftp.TftpServer" -Dexec.args="7777"
 ```
-### Start the Client:
+- `7777` → The port number the server will listen on.
+
+### Start the TFTP Client
 ```sh
-java -jar client/target/client.jar
+cd client
+mvn compile exec:java -Dexec.mainClass="bgu.spl.net.impl.tftp.TftpClient" -Dexec.args="127.0.0.1 7777"
 ```
+- `127.0.0.1` → The IP address of the server (local machine).
+- `7777` → The port the client should connect to.
 
 ## Configuration
 Modify `config.properties` in `resources/` to adjust file management settings such as:
