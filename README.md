@@ -1,13 +1,12 @@
 # File Management System with TFTP
 
 ## Overview
-This project is a **Java-based file management system** with an integrated **Trivial File Transfer Protocol (TFTP) client and server**. It implements network communication protocols for efficient file transfers and multi-threading for handling multiple connections.
+This project is a **Java-based file management system** with an integrated **Trivial File Transfer Protocol (TFTP) client and server**. It allows efficient file transfers, supports multi-threading, and follows networking protocols for seamless communication.
 
 ## Features
 ✅ Multi-threaded TFTP server and client  
 ✅ Supports file uploads and downloads  
 ✅ Implements networking protocols for file management  
-✅ Configurable settings via `config.properties`  
 ✅ Built with Java and Maven for easy dependency management  
 
 ## Project Structure
@@ -15,10 +14,10 @@ This project is a **Java-based file management system** with an integrated **Tri
 FileManagement-TFTP/
 ├── client/                     # Client-side implementation
 │   ├── src/main/java/          # Java source code for client
-│   ├── resources/              # Configuration files
+│   ├── resources/              # Optional configuration files
 ├── server/                     # Server-side implementation
 │   ├── src/main/java/          # Java source code for server
-│   ├── resources/              # Configuration files
+│   ├── resources/              # Optional configuration files
 ├── README.md                   # Project documentation
 ├── .gitignore                   # Ignore unnecessary files
 └── pom.xml                      # Maven build file
@@ -55,16 +54,6 @@ mvn compile exec:java -Dexec.mainClass="bgu.spl.net.impl.tftp.TftpClient" -Dexec
 ```
 - `127.0.0.1` → The IP address of the server (local machine).
 - `7777` → The port the client should connect to.
-
-## Configuration
-Modify `config.properties` in `resources/` to adjust file management settings such as:
-```
-# Server port
-port=69
-
-# Maximum connections
-maxClients=10
-```
 
 ## Running Tests
 To run unit tests:
